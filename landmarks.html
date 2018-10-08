@@ -19,7 +19,7 @@
 	</div>
 </div>
 
-<div role="navigation" class="" style="z-index: auto; position: static; top: auto;" id="lrg_topnav">
+<div role="navigation" aria-labelledby="topnavlistcontainer" class="" style="z-index: auto; position: static; top: auto;" id="lrg_topnav">
     <div style="width: 100%;" id="topnavlistcontainer" aria-label="main navigation tabs">
         <a name="main-nav" id="main-nav"></a>
         <ul style="" id="topnavlist">
@@ -43,8 +43,8 @@
 		  <a id="menu"></a>
 		     <div id="side-menu" aria-label="left side menu" accesskey="0">
 		        <br/>
-                <h2 class="box"><span>Networking</span></h2>
-                <div role="navigation" class="box" id="menu_Networking">
+                <h2 class="box" id="networking_hdr"><span>Networking</span></h2>
+                <div role="navigation" aria-labelledby="networking_hdr" class="box" id="menu_Networking">
                     <ul class="social_side_menu">
                         <li><a href="" class="fake">My Network</a></li>
                         <li><a href="" class="fake">My Contacts</a></li>
@@ -56,7 +56,7 @@
                     <div class="divider"></div>
                 </div>
 			<br/>
-                <h2 role="???" class="box"><span>People Online</span></h2>
+                <h2 role="region" aria-label="People Online" class="box"><span>People Online</span></h2>
                 <div class="box" id="menu_UsersOnline">
                     <ul style="padding: 0px; list-style: none;">
                         <li style="padding: 3px 0px;" id="mylogin">No one logged in</li>
