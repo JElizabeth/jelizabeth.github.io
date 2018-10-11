@@ -118,6 +118,11 @@ var pluginName = "ik_suggest",
 		
 		var plugin, $me, suggestions, selected, msg;
 		
+		plugin = event.data.plugin;
+		$me = $(event.currentTarget);
+							
+
+
 		switch (event.keyCode) {
 		    case ik_utils.keys.down: // select next suggestion from list   
 		                selected = plugin.list.find('.selected');  
@@ -137,9 +142,7 @@ var pluginName = "ik_suggest",
 		                break;
 		           
 		            default: // get suggestions based on user input
-						plugin = event.data.plugin;
-						$me = $(event.currentTarget);
-							
+						
 								plugin.list.empty();
 								
 								suggestions = plugin.getSuggestions(plugin.options.source, $me.val());
