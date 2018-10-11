@@ -50,7 +50,7 @@
 				.css('position', 'relative')
 				.removeAttr('title') // remove title to prevent it from being read
 				.after($tooltip)
-				.on('mouseover', function(event) {
+				.on('mouseover focus', function(event) {
 					
 					var y, x;
 					
@@ -69,7 +69,7 @@
 					
 					$tooltip // position and show tooltip
 						.attr({
-        							'aria-hidden': 'false'
+        					'aria-hidden': 'false'
         				})
 						.css({
 							'top': y, 
