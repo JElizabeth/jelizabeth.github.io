@@ -44,7 +44,9 @@
 			.on('keydown', {'plugin': plugin}, plugin.onKeyDown)
 			.on('mouseenter', {'plugin': plugin}, plugin.stopTimer)
 			.on('mouseleave', {'plugin': plugin}, plugin.startTimer)
-		
+			.on('focus', {'plugin': plugin}, plugin.stopTimer)
+			.on('blur', {'plugin': plugin}, plugin.startTimer)
+
 		$controls = $('<div/>')
 		    .attr({
 		        'aria-hidden': 'true' // hide controls from screen readers
@@ -117,7 +119,7 @@
 			clearInterval(plugin.timer);
 			plugin.timer = null;
 		}
-		if (event.type === 'focusout') {
+		if (event.type === 'focusout' || event.type === "blur") {
 		    plugin.element.removeAttr('aria-live');
 		}
 
@@ -136,13 +138,11 @@
 		
 		var plugin = event.data.plugin;
 		
-		if (event.type === 'focusin') {
+		if (event.type === 'focusin' || event.type === 'focus') {
 		    plugin.element.attr({'aria-live': 'polite'});
 		 }
 		clearInterval(plugin.timer);
-	
-
-		 plugin.timer = null;
+	 	plugin.timer = null;
 	};
 	
 	/** 
