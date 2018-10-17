@@ -135,12 +135,14 @@
 	Plugin.prototype.stopTimer = function (event) {
 		
 		var plugin = event.data.plugin;
-		clearInterval(plugin.timer);
-		plugin.timer = null;
 		
-		 if (event.type === 'focusin') {
+		if (event.type === 'focusin') {
 		    plugin.element.attr({'aria-live': 'polite'});
 		 }
+		clearInterval(plugin.timer);
+	
+
+		 plugin.timer = null;
 	};
 	
 	/** 
@@ -235,7 +237,7 @@ Plugin.prototype.onKeyDown = function (event) {
             break;
         }
     }
-	
+
 	$.fn[pluginName] = function ( options ) {
 		
 		return this.each(function () {
