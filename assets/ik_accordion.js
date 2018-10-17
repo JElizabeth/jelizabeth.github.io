@@ -47,7 +47,7 @@
 			
 			$me = $(el);
 			$btn = $('<div/>').attr({
-	          	'id': id + '_btn_' + i
+	          	'id': id + '_btn_' + i,
 	          	'role': 'button',
                 'aria-controls': id + '_panel_' + i, // associate button with corresponding panel
                 'aria-expanded': false, // toggle expanded state
@@ -73,8 +73,8 @@
 		
 	};
 	
-	/** 
-	 * Toggles accordion panel.
+	/**
+ 	 * Toggles accordion panel.
 	 *
 	 * @param {Object} event - Keyboard or mouse event.
 	 * @param {object} event.data - Event data.
